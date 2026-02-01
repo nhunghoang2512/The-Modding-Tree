@@ -50,7 +50,7 @@ addLayer("p", {
         return player.points.add(1).pow(0.3)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-    },
+        },
 	unlocked() { return hasUpgrade("p", 12) },
     layerShown(){return true}
 })
