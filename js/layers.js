@@ -37,10 +37,10 @@ addLayer("p", {
         },
     effect() {
         return player[this.layer].points.add(1).pow(0.2)
-		unlocked() { return hasUpgrade("p", 11) },
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
         },
+	    unlocked() { return hasUpgrade("p", 11) },
 		13: {
     	title: "3",
     	description: "Point boost itself.",
@@ -48,9 +48,9 @@ addLayer("p", {
 		},
 	effect() {
         return player.points.add(1).pow(0.3)
-		unlocked() { return hasUpgrade("p", 12) },
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
     },
+	unlocked() { return hasUpgrade("p", 12) },
     layerShown(){return true}
 })
