@@ -51,6 +51,6 @@ addLayer("p", {
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
         },
-	unlocked() { return hasUpgrade("p", 12) },
+	    unlocked() { return hasUpgrade("p", 12) },
     layerShown(){return true}
 })
