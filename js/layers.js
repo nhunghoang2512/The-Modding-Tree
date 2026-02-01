@@ -24,8 +24,6 @@ addLayer("p", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	    layerShown(){return true}
-
 	upgrades: {
 		11: {
     	title: "1",
@@ -52,6 +50,7 @@ addLayer("p", {
         return player.points.add(1).pow(0.3)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-        },
-	    unlocked() { return hasUpgrade("p", 12) },
+    },
+	unlocked() { return hasUpgrade("p", 12) },
+    layerShown(){return true}
 })
