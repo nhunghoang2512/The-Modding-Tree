@@ -35,15 +35,22 @@ addLayer("p", {
     	description: "Prestige point boost point gain.",
     	cost: new Decimal(2),
         },
-		13: {
-    	title: "3",
-    	description: "Point boost point gain.",
-    	cost: new Decimal(10),
     effect() {
-        return player[this.layer].points.add(1).pow(0.5)
+        return player[this.layer].points.add(1).pow(0.2)
+		unlocked() { return hasUpgrade("p", 11) },
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
         },
+		13: {
+    	title: "3",
+    	description: "Point boost itself.",
+    	cost: new Decimal(10),
+		},
+	effect() {
+        return player.points.add(1).pow(0.3)
+		unlocked() { return hasUpgrade("p", 12) },
+    },
+    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
     },
     layerShown(){return true}
 })
